@@ -1,0 +1,24 @@
+{
+  "name": "template_client_side",
+  "description": "Template client side with typescript",
+  "main": "index.js",
+  "authors": [
+    "underdolphin (masato sueda)"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "Typescript",
+    "Client-Side",
+    "gulp",
+    "minify"
+  ],
+  "moduleType": [],
+  "homepage": "none",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
