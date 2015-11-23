@@ -9,7 +9,7 @@
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
     "emitDecoratorMetadata": true,
-    "experimentalAsyncFunctions": true,
+    "experimentalAsyncFunctions": false,
     "experimentalDecorators": true
   },
   "formatCodeOptions": {
@@ -33,7 +33,9 @@
     "!./bower_components/**/*.ts",
     "!./typings/**/*.ts"
   ],
-  "files": [],
+  "files": [
+    "./Ts/app.ts"
+  ],
   "atom": {
     "rewriteTsconfig": true
   }

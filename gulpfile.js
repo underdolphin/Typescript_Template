@@ -19,6 +19,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var plumber = require('gulp-plumber');
+var webpack = require('gulp-webpack');
+var webpackConfig = require('./webpack.config.js');
 
 var dir = {
   dist: 'dist',
@@ -44,16 +46,15 @@ var typescriptProject = typescript.createProject({
   sortOutput: true,
   experimentalDecorators:true,
   emitDecoratorMetadata:true,
-  experimentalAsyncFunctions:true
+  experimentalAsyncFunctions:false
 });
 
 gulp.task('typescript-compile', function() {
   gulp.src([dir.src + '/{,**/}*.ts'])
     .pipe(plumber())
     .pipe(typescript(typescriptProject))
-    .js
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest(dir.src));
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest('./src'));
 });
 
 gulp.task('uglify', function() {
